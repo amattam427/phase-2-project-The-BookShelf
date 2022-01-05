@@ -4,13 +4,6 @@ import {useState, useEffect} from 'react';
 function BookShelf({books}) {
     const [favBooks, setFavBooks] = useState([])
 
-    function handleFavorites(e){
-        e.preventDefault();
-
-        const bookData={books}
-    }
-    
-
     useEffect(() => {
         fetch('http://localhost:3000/books')
         .then(resp => resp.json())

@@ -3,7 +3,7 @@ import About from './About';
 import BookShelf from './BookShelf';
 import Home from './Home';
 import NavBar from './NavBar';
-import Descriptions from './Descriptions'
+import Descriptions from './Descriptions';
 import {useState} from 'react';
 import {Route, Switch} from 'react-router-dom';
 import './App.css';
