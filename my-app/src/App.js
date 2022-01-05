@@ -4,10 +4,18 @@ import BookShelf from './BookShelf';
 import Home from './Home';
 import NavBar from './NavBar';
 import Descriptions from './Descriptions'
+import {useState} from 'react';
 import {Route, Switch} from 'react-router-dom';
 import './App.css';
 
 function App() {
+const [books, setBooks] = useState([]);
+
+    function handleAddBook(newBook) {
+      const newBookArray = [newBook, ...books];
+      setBooks(newBookArray)
+    }
+
   return (
     <div>
 
@@ -16,7 +24,7 @@ function App() {
       <Switch>
 
         <Route path='/books/:id'>
-          <Descriptions />
+          <Descriptions handleAddBook={handleAddBook} />
         </Route>
 
         <Route path='/about'>
@@ -24,7 +32,7 @@ function App() {
         </Route>
 
         <Route path='/bookshelf'>
-          <BookShelf />
+          <BookShelf books={books} />
         </Route>
 
         <Route path='/'>

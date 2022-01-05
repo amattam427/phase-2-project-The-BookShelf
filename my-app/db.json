@@ -4,6 +4,28 @@
       "id": 1,
       "title": "json-server",
       "author": "typicode"
+    },
+    {
+      "title": "Who Is Michael Jordan?",
+      "author": [
+        "Kirsten Anderson",
+        "Who HQ"
+      ],
+      "id": 2
+    },
+    {
+      "title": "Michael Jordan",
+      "author": [
+        "Roland Lazenby"
+      ],
+      "id": 3
+    },
+    {
+      "title": "Michael Jordan",
+      "author": [
+        "Roland Lazenby"
+      ],
+      "id": 4
     }
   ]
 }

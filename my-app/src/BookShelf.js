@@ -1,23 +1,24 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
 
-function BookShelf() {
-    const [books, setBooks] = useState([])
+function BookShelf({books}) {
+    const [favBooks, setFavBooks] = useState([])
 
     useEffect(() => {
         fetch('http://localhost:3000/books')
         .then(resp => resp.json())
-        .then(data => setBooks(data))
-    },[])
+        .then(data => setFavBooks(data))
+    },[books])
 
     return(
         <div>
             <h1>Welcome to your BookShelf</h1>
             <ul>
-                {books.map(book => (
+                {favBooks.map(book => (
                     <li key={book.id}>
                         Author: {book.author},
                         Title: {book.title}
+                        {/* add the thumbnail as an image here too */}
                     </li>
                 ))}
             </ul>
