@@ -1,39 +1,12 @@
 {
   "books": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    },
-    {
-      "title": "Who Is Michael Jordan?",
+      "title": "Driven from Within",
       "author": [
-        "Kirsten Anderson",
-        "Who HQ"
+        "Michael Jordan"
       ],
-      "id": 2
-    },
-    {
-      "title": "Michael Jordan",
-      "author": [
-        "Roland Lazenby"
-      ],
-      "id": 3
-    },
-    {
-      "title": "Michael Jordan",
-      "author": [
-        "Roland Lazenby"
-      ],
-      "id": 4
-    },
-    {
-      "title": "Who Is Michael Jordan?",
-      "author": [
-        "Kirsten Anderson",
-        "Who HQ"
-      ],
-      "id": 5
+      "image": "http://books.google.com/books/content?id=hDGrnAa9rZcC&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE707lKPbO7WBZMwPhjxnIYIC_frD7Mcf8YviUDcIpqfwJckaaU9LG-WgBOsn7P0oLgbyippkYORro6EpP_mpwojJrF3ewaMRiqs58a5IqZKs0fN7dhgZMpMNRRrO_AJEgishBK0z&source=gbs_api",
+      "id": 1
     }
   ]
 }

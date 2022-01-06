@@ -11,6 +11,7 @@ function Descriptions ({handleAddBook}) {
         fetch(`https://www.googleapis.com/books/v1/volumes/${params.id}`)
         .then(resp => resp.json())
         .then(data => {
+            console.log(data)
             setBookInfo(data);
             setIsLoaded(true);
         })
@@ -25,12 +26,13 @@ function Descriptions ({handleAddBook}) {
     function handleClick() {
     let title = bookInfo.volumeInfo.title;
     let author = bookInfo.volumeInfo.authors;
-    console.log(title);
-    console.log(author);
+    let image = bookInfo.volumeInfo.imageLinks.thumbnail;
+
 
         const bookData = {
             'title': title,
             'author': author,
+            'image': image,
         };
 
 
