@@ -16,6 +16,7 @@ function Home () {
           fetch(`https://www.googleapis.com/books/v1/volumes?q=${text}&key=${apiKey}&maxResults=30`)
           .then(resp => resp.json())
           .then(data => setResult(data.items))
+          .catch(error => error.message)
       }
     
       function handleChange (e) {
@@ -32,7 +33,7 @@ function Home () {
                         <Form.Label style={{color:'#7B68EE'}} >The Bookshelf App</Form.Label>
                         <Form.Control type='text' placeholder='Search for Books...' onChange={handleChange} />
                     </Form.Group>
-                    <Button variant='primary' type='submit'>Search</Button>
+                    <Button style={{background:'#7B68EE'}} className='mt-3' type='submit'>Search</Button>
                 </Form>
                 </Card.Body>
             </Card>

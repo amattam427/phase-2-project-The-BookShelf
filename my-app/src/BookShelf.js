@@ -1,6 +1,6 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
-import { Card, Container, ListGroup, Image } from 'react-bootstrap';
+import { Card, Container, ListGroup, Image, Row } from 'react-bootstrap';
 
 function BookShelf({books}) {
     const [favBooks, setFavBooks] = useState([])
@@ -18,10 +18,9 @@ function BookShelf({books}) {
                     <Card>
                         <ListGroup>
                             {favBooks.map(book => (
-                                <ListGroup.Item key={book.id}>
-                                    <Image src={book.image} />
-                                    Author: {book.author},
-                                    Title: {book.title}
+                                <ListGroup.Item key={book.id} style={{color:'#7B68EE'}} onClick={(e) => e.target.remove()}>
+                                    {/* <Image src={book.image} /> */}
+                                    {book.title} by {book.author}
                                 </ListGroup.Item>
                             ))}
                         </ListGroup>
