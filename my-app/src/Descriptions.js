@@ -1,6 +1,7 @@
 import React from 'react';
 import {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
+import { Button, Card, Container, Image} from 'react-bootstrap';
 
 function Descriptions ({handleAddBook}) {
     let params = useParams();
@@ -48,17 +49,24 @@ function Descriptions ({handleAddBook}) {
     }
 
 
-
     return (
-        <div>
-            <img key={bookInfo.id} src={bookInfo.volumeInfo.imageLinks.thumbnail} alt={bookInfo.volumeInfo.title}/>
-            <p>Title: {bookInfo.volumeInfo.title}</p>
-            <p>Author(s): {bookInfo.volumeInfo.authors}</p>
-            <p>Categorie(s): {bookInfo.volumeInfo.categories}</p>
-            <p>Book Description: {bookInfo.volumeInfo.description}</p>
-            <div>
-                <button onClick={handleClick}>Add to Bookshelf</button>
-            </div>
+        <div className='App'>
+            <Container>
+                <Image key={bookInfo.id} className='m-1' src={bookInfo.volumeInfo.imageLinks.thumbnail} alt={bookInfo.volumeInfo.title}/>
+                <Card className='m-1'>
+                    <Card.Body>
+                        <Card.Title style={{color: '#7B68EE'}}>Title</Card.Title>
+                        <Card.Text style={{color: '#7B68EE'}}>{bookInfo.volumeInfo.title}</Card.Text>
+                        <Card.Title style={{color: '#7B68EE'}}>Author(s)</Card.Title>
+                        <Card.Text style={{color: '#7B68EE'}}>{bookInfo.volumeInfo.authors}</Card.Text>
+                        <Card.Title style={{color: '#7B68EE'}}>Categorie(s)</Card.Title>
+                        <Card.Text style={{color: '#7B68EE'}}>{bookInfo.volumeInfo.categories}</Card.Text>
+                        <Card.Title style={{color: '#7B68EE'}}>Summary</Card.Title>
+                        <Card.Text style={{color: '#7B68EE'}}>{bookInfo.volumeInfo.description}</Card.Text>
+                        <Button style={{background:'#7B68EE'}} onClick={handleClick}>Add to Bookshelf</Button>
+                    </Card.Body>
+                </Card>
+            </Container>
         </div>
     )
 }

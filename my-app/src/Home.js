@@ -1,7 +1,7 @@
 import React from 'react';
 import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
-import { Button, Card, Form, Container} from 'react-bootstrap';
+import { Button, Card, Form, Container, Image} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 function Home () {
@@ -13,10 +13,10 @@ function Home () {
       function handleSubmit (e) {
         e.preventDefault();
     
-          fetch(`https://www.googleapis.com/books/v1/volumes?q=${text}&key=${apiKey}&maxResults=30`)
+          fetch(`https://www.googleapis.com/books/v1/volumes?q=${text}&key=${apiKey}&maxResults=35`)
           .then(resp => resp.json())
           .then(data => setResult(data.items))
-          .catch(error => error.message)
+          .catch(error => alert(error))
       }
     
       function handleChange (e) {
@@ -39,7 +39,13 @@ function Home () {
             </Card>
             <div>
             {result.map(book => (
-            <img key={book.id} src={book.volumeInfo.imageLinks.thumbnail} alt={book.title} onClick={() => history.push(`/books/${book.id}`)}/>
+                <Image
+                key={book.id}
+                src={book.volumeInfo.imageLinks.thumbnail}
+                alt={book.title}
+                onClick={() => history.push(`/books/${book.id}`)}
+                className='m-1'
+                />
             ))}
             </div>
             </Container>
